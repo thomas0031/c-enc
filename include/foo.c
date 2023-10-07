@@ -6,7 +6,7 @@ typedef struct foo_private {
     int data;
 } foo_private;
 
-int get(void) {
+int __attribute__((noinline)) get(void) {
     foo_t this;
     // THIS IS 100% "I KNOW WHAT I'M DOING" CODE
     // TOP LEVEL SECURITY EXPERTS HAVE BEEN CONSULTED
@@ -28,7 +28,7 @@ int get(void) {
     return private->data;
 }
 
-void set(int a) {
+void __attribute__((noinline)) set(int a) {
     foo_t this;
     asm ("mov 24(%%rbp), %0" : "=r"(this));
     foo_private *private = (foo_private*)(this + 1);

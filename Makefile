@@ -1,6 +1,6 @@
 # Compiler and compiler flags
 CC = gcc
-CFLAGS = -Iinclude -Wall
+CFLAGS = -Iinclude -Wall -O0 -fno-inline
 
 # Object files
 OBJS = main.o include/foo.o
