@@ -1,14 +1,15 @@
-#include "include/foo.h"
+#include "include/point.h"
 
+#include <stddef.h>
 #include <stdio.h>
 
 int main(void)
 {
-    foo_t foo = foo_new();
+    Point_t p = newPoint(1, 2);
 
-    printf("foo->get() = %d\n", foo->get());
-    foo->set(42);
-    printf("foo->get() = %d\n", foo->get());
+    p->print();
+    p->set(3, 4);
+    p->print();
 
     return 0;
 }
